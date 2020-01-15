@@ -19,16 +19,16 @@ Create an index.html file which contains:
 - [X] A title
 - [X] A main headline and two section headlines
 - [X] Semantic tags that correspond to the parts of your page
-- [ ] A section to select burgers that contains at least three items. Each item has at least:
-	- [ ] A name
-	- [ ] An image
-	- [ ] Information about allergies 
-- [ ] A section to collect customer information:
-	- [ ] First- and Last Name (in one field)
-	- [ ] E-Mail Address
-	- [ ] Street
-	- [ ] House Number (only allowing numbers in this field)
-	- [ ] Gender (male, female, do not wish to provide as radio buttons)
+- [X] A section to select burgers that contains at least three items. Each item has at least:
+	- [x] A name
+	- [x] An image
+	- [x] Information about allergies 
+- [X] A section to collect customer information:
+	- [X] First- and Last Name (in one field)
+	- [X] E-Mail Address
+	- [X] Street
+	- [X] House Number (only allowing numbers in this field)
+	- [X] Gender (male, female, do not wish to provide as radio buttons)
 - [ ] A button to place the order
 
 ## 03 CSS
