@@ -1,4 +1,5 @@
-html, 
-body {
+@import 'https://fonts.googleapis.com/css?family=Raleway';
 
+body {
+  font-family: "Helvetica Neue", Raleway, sans-serif;
 }
