@@ -9,8 +9,6 @@
       <h1>Välommen till BurgerOnline</h1>
 
       <section>
-        
-
         <h3>Select burger</h3>
         <p>
         This is where you execute burger selection
@@ -60,8 +58,6 @@
             </tr>
           </tbody>
         </table>
-
-
       </section>
 
       <section>
@@ -69,8 +65,27 @@
         <p>
         This is where you provide necessary information
         </p>
-
+        <section id="deliveryInformation">
         <h4>Delivery information</h4>
+          <form>
+            <p>
+              <label for="fnln">First- and Last Name</label><br>
+              <input type="text" name="name" id="fnln" placeholder="First- and Last Name" required />
+            </p>
+            <p>
+              <label for="em">E-Mail Address</label><br>
+              <input type="email" name="email" id="em" placeholder="E-Mail Address" required />
+            </p>
+            <p>
+              <label for="st">Street</label><br>
+              <input type="text" name="street" id="st" placeholder="Stree" required />
+            </p>
+            <p>
+              <label for="hn">House Number</label><br>
+              <input type="number" name="houseNumber" id="hn" placeholder="House Number" required />
+            </p>
+          </form>
+        </section>
       </section>
     </main>
     <footer>
