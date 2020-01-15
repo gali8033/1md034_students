@@ -4,3 +4,7 @@ body {
   font-family: "Helvetica Neue", Raleway, sans-serif;
   font-size: 1.2em;
 }
+
+.allergy {
+  font-weight: bold;
+}
