@@ -30,10 +30,6 @@ section {
   margin: 0 2%;
 }
 
-table {
-  width: 100%;
-}
-
 button {
   margin: 2%;
 }
@@ -41,6 +37,38 @@ button {
 button:hover {
   background: #555555;
   cursor: pointer;
+}
+
+.burgersWrapper {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.a {
+  grid-column: 1 / 1;
+  text-align: center;
+}
+
+.a ul {
+  text-align: left;
+}
+
+.b {
+  grid-column: 2 / 2;
+  text-align: center;
+}
+
+.b ul {
+  text-align: left;
+}
+
+.c {
+  grid-column: 3 / 3;
+  text-align: center;
+}
+
+.c ul {
+  text-align: left;
 }
 
 .allergy {
