@@ -1,8 +1,26 @@
 @import 'https://fonts.googleapis.com/css?family=Raleway';
+/*@import 'https://meyerweb.com/eric/tools/css/reset/reset.css';*/
 
 body {
   font-family: "Helvetica Neue", Raleway, sans-serif;
   font-size: 1.2em;
+}
+
+header {
+  width: 100%;
+  margin: 0 2%;
+}
+
+header img {
+  opacity: 0.8;
+}
+
+section {
+  margin: 0 2%;
+}
+
+table {
+  width: 100%;
 }
 
 button {
@@ -12,14 +30,6 @@ button {
 button:hover {
   background: #555555;
   cursor: pointer;
-}
-
-section {
-  margin: 0 2%;
-}
-
-table {
-  width: 100%;
 }
 
 .allergy {

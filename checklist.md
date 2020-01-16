@@ -1,5 +1,3 @@
-# Continue on 3.12
-
 # Checklist
 
 Before you submit the different parts of your lab, make sure that your project fulfils the tasks mentioned below.
@@ -47,7 +45,7 @@ Add the following style/behaviour to your website (mostly in style.css but also 
 - [X] Define a table width and center it
 - [X] Add margins to the sections and the order button
 - [X] Add a border to the two sections
-- [ ] Add an image after your headline and make it slightly transparent
+- [X] Add an image after your headline and make it slightly transparent
 - [ ] Place the image behind your headline to finalize your header
 - [ ] Use a grid layout instead of tables for the burger selection section
 
