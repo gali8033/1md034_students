@@ -5,6 +5,11 @@ body {
   font-size: 1.2em;
 }
 
+button:hover {
+  background: #555555;
+  cursor: pointer;
+}
+
 .allergy {
   font-weight: bold;
 }
