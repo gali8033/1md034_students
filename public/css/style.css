@@ -6,7 +6,7 @@ body {
 }
 
 button {
-  margin: 2% 0;
+  margin: 2%;
 }
 
 button:hover {
@@ -16,10 +16,6 @@ button:hover {
 
 section {
   margin: 0 2%;
-}
-
-#deliveryInformation {
-  margin: 0;
 }
 
 table {
@@ -33,8 +29,12 @@ table {
 #burgers {
   background: #000000;
   color: #ffffff;
+  border: 2px dashed #ffffff;
+  padding: 2%;
 }
 
 #orderInformation {
-  
+  border: 2px dashed #000000;
+  padding: 2%;
 }
+
