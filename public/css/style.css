@@ -10,6 +10,10 @@ button:hover {
   cursor: pointer;
 }
 
+table {
+  width: 100%;
+}
+
 .allergy {
   font-weight: bold;
 }
