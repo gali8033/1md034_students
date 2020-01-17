@@ -24,34 +24,24 @@ let burger4 = new menuItem("The Beef Haven", "http://www.mikaelasmenu.com/upload
 // The Mushroom Diplomacy
 let burger5 = new menuItem("The Mushroom Diplomacy", "https://s23991.pcdn.co/wp-content/uploads/2019/08/spinach-tomato-mushroom-burger.jpg", 700, ["portabello mushroom", "red onion", "vegan majonaise", "pickled cucumber", "cumberland jam"], ["gluten"]);
 
-let div = document.getElementById("myID");
-let p1 = document.createElement("p");
-let p2 = document.createElement("p");
-let p3 = document.createElement("p");
-let p4 = document.createElement("p");
-let p5 = document.createElement("p");
+let menu = [burger1, burger2, burger3, burger4, burger5];
 
-let b1 = document.createTextNode(burger1.getBurger());
-let b2 = document.createTextNode(burger2.getBurger());
-let b3 = document.createTextNode(burger3.getBurger());
-let b4 = document.createTextNode(burger4.getBurger());
-let b5 = document.createTextNode(burger5.getBurger());
+let myList = document.getElementById("myList");
 
-p1.appendChild(b1);
-p2.appendChild(b2);
-p3.appendChild(b3);
-p4.appendChild(b4);
-p5.appendChild(b5);
+for(let i = 0; i < menu.length; i++) {
+	let li = document.createElement("li");
+  let allergy = " | Allergies: " + (menu[i].allergies.includes("gluten") ? "gluten " : "") + (menu[i].allergies.includes("lactose") ? "lactose " : "");
+  let textNode = document.createTextNode(menu[i].getBurger() + allergy);
+  li.appendChild(textNode);
+  myList.appendChild(li);
+}
 
-div.appendChild(p1);
-div.appendChild(p2);
-div.appendChild(p3);
-div.appendChild(p4);
-div.appendChild(p5);
 
 /*const vm = new Vue({
   el: '#myID',
   data: {
-    arbitraryVariableName: ''
-  }
+     
+   }
 })*/
+
+

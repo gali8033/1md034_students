@@ -1,3 +1,13 @@
+/*
+<script src="https://vuejs.org/js/vue.js"></script>
+  <div id="myID">
+    <h1>Välj en burgare</h1>
+    <ul>
+      <li v-for="item in menu">{{ item.getBurger() }} | Allergies: <span v-if="item.allergies.includes('gluten')">gluten </span> <span v-if="item.allergies.includes('lactose')">lactose </span></li>
+    </ul>
+</div>
+ */
+
 function menuItem(name, image, kcal, ingredients, allergies) {
   this.name = name;
   this.image = image;
@@ -24,37 +34,23 @@ let burger4 = new menuItem("The Beef Haven", "http://www.mikaelasmenu.com/upload
 // The Mushroom Diplomacy
 let burger5 = new menuItem("The Mushroom Diplomacy", "https://s23991.pcdn.co/wp-content/uploads/2019/08/spinach-tomato-mushroom-burger.jpg", 700, ["portabello mushroom", "red onion", "vegan majonaise", "pickled cucumber", "cumberland jam"], ["gluten"]);
 
-let div = document.getElementById("myID");
-let p1 = document.createElement("p");
-let p2 = document.createElement("p");
-let p3 = document.createElement("p");
-let p4 = document.createElement("p");
-let p5 = document.createElement("p");
-
-let b1 = document.createTextNode(burger1.getBurger());
-let b2 = document.createTextNode(burger2.getBurger());
-let b3 = document.createTextNode(burger3.getBurger());
-let b4 = document.createTextNode(burger4.getBurger());
-let b5 = document.createTextNode(burger5.getBurger());
-
-p1.appendChild(b1);
-p2.appendChild(b2);
-p3.appendChild(b3);
-p4.appendChild(b4);
-p5.appendChild(b5);
-
-/*
-div.appendChild(p1);
-div.appendChild(p2);
-div.appendChild(p3);
-div.appendChild(p4);
-div.appendChild(p5);
-*/
-
 const vm = new Vue({
   el: '#myID',
   data: {
-    html: p1.outerHTML + p2.outerHTML + p3.outerHTML + p4.outerHTML + p5.outerHTML  }
+  	menu: [burger1, burger2, burger3, burger4, burger5]   
+  }
 })
+
+
+
+
+
+
+
+
+
+
+
+
 
 
