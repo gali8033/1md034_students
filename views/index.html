@@ -5,8 +5,8 @@
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://vuejs.org/js/vue.js"></script>
-    <script src="js/js_script.js"></script>
-    <script src="js/vue_script.js"></script>
+    <script src="js/js_script.js" defer></script>
+    <script src="js/vue_script.js" defer></script>
   </head>
   <body>
     <header>
@@ -22,37 +22,7 @@
         This is where you execute burger selection
         </p>
 
-        <div class="burgersWrapper">
-          <div class="a">
-            <h4>The Fire Burger</h4>
-            <img src="https://media.apnarm.net.au/media/images/2018/07/02/twb020718hot-vg0ryvm2nzp3g4cejq2_t1880.JPG" alt="The Fire Burger" title="The tasty and flaming hot Fire Burger!" height="300">
-            <ul>
-              <li>300g beef patty, tomatoes, lettuce, majonaise, sriracha</li>
-              <li>750 kCal</li>
-              <li>Contains <span class="allergy">lactose</span></li>
-              <li>Contains <span class="allergy">gluten</span></li>
-            </ul>
-          </div>
-          <div class="b">
-            <h4>The vegetarian Dream</h4>
-            <img src="https://sweetsimplevegan.com/wp-content/uploads/2019/06/Easy-5-Ingredient-Veggie-Burgers-Sweet-Simple-Vegan-thumbnail.jpg" alt="The Vegetarian Dream" title="For all animal lovers out there!" height="300">
-            <ul>
-              <li>250g oumph patty, tomatoes, lettuce, red onion, veggo majonaise</li>
-                <li>600 kCal</li>
-                <li>Contains <span class="allergy">gluten</span></li>
-              </ul>
-          </div>
-          <div class="c">
-            <h4>The Cheesy Joke</h4>
-            <img src="https://tasteandsee.com/wp-content/uploads/2017/06/Easy-Pimento-Cheese-and-Bacon-Burger-EL-burger-great.jpg" alt="The Cheesy Joke" title="When too much cheese is a spelling error" height="300">
-            <ul>
-              <li>250g beef patty, tomatoes, lettuce, red onion, pepper jack cheese, cheddar cheese</li>
-              <li>850 kCal</li>
-              <li>Contains <span class="allergy">lactose</span></li>
-              <li>Contains <span class="allergy">gluten</span></li>
-            </ul>
-          </div>
-        </div>
+        <div id="burgersWrapper"></div>
 
 
       </section>

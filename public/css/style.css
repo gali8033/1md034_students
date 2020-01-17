@@ -39,40 +39,20 @@ button:hover {
   cursor: pointer;
 }
 
-.burgersWrapper {
-  display: grid;
-  grid-template-columns: auto auto auto;
-}
 
-.a {
-  grid-column: 1 / 1;
+.box {
   text-align: center;
 }
 
-.a ul {
+.box h4 {
+  white-space: nowrap;
+}
+
+.box ul {
   text-align: left;
-}
-
-.b {
-  grid-column: 2 / 2;
-  text-align: center;
-}
-
-.b ul {
-  text-align: left;
-}
-
-.c {
-  grid-column: 3 / 3;
-  text-align: center;
-}
-
-.c ul {
-  text-align: left;
-}
-
-.allergy {
-  font-weight: bold;
+  font-size: 0.8em;
+  width: 100%;
+  padding-left: 0;
 }
 
 #burgers {

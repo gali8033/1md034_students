@@ -8,7 +8,7 @@
 </div>
  */
 
-function menuItem(name, image, kcal, ingredients, allergies) {
+/*function menuItem(name, image, kcal, ingredients, allergies) {
   this.name = name;
   this.image = image;
   this.kcal = kcal;
@@ -40,6 +40,7 @@ const vm = new Vue({
   	menu: [burger1, burger2, burger3, burger4, burger5]   
   }
 })
+*/
 
 
 
