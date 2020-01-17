@@ -24,6 +24,7 @@ let burger4 = new menuItem("The Beef Haven", "http://www.mikaelasmenu.com/upload
 // The Mushroom Diplomacy
 let burger5 = new menuItem("The Mushroom Diplomacy", "https://s23991.pcdn.co/wp-content/uploads/2019/08/spinach-tomato-mushroom-burger.jpg", 700, ["portabello mushroom", "red onion", "vegan majonaise", "pickled cucumber", "cumberland jam"], ["gluten"]);
 
+/*
 let menu = [burger1, burger2, burger3, burger4, burger5];
 
 let burgersWrapper = document.getElementById("burgersWrapper");
@@ -40,6 +41,7 @@ for(let i = 0; i < menu.length; i++) {
   let image = document.createElement("img");
   image.src = menu[i].image;
   image.height = 150;
+  image.alt = menu[i].name;
 
   // The list of information
   let list = document.createElement("ul");
@@ -98,13 +100,5 @@ for(let i = 0; i < menu.length; i++) {
   // Append everything to the burgersWrapper div
   burgersWrapper.appendChild(box);
 }
-
-
-/*const vm = new Vue({
-  el: '#myID',
-  data: {
-     
-   }
-})*/
-
+*/
 

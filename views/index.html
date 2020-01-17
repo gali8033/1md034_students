@@ -22,7 +22,18 @@
         This is where you execute burger selection
         </p>
 
-        <div id="burgersWrapper"></div>
+        <div id="burgersWrapper">
+          <div class="box" v-for="(item, index) in menu" :style="{gridColumn: index+1}">
+            <h4>{{item.name}}</h4>
+            <img :src="item.image" :alt="item.name" height="150">
+            <ul>
+              <li><span v-for="(ing, index) in item.ingredients">{{ing}}<span v-if="index < item.ingredients.length-1">, </span></span></li>
+              <li>{{item.kcal}} kCal</li>
+              <li><span v-for="(allergy, index) in item.allergies">{{allergy}}<span v-if="index < item.allergies.length-1">, </span></span></li>
+            </ul>
+          </div>
+
+        </div>
 
 
       </section>

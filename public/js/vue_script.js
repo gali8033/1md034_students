@@ -7,8 +7,8 @@
     </ul>
 </div>
  */
-
-/*function menuItem(name, image, kcal, ingredients, allergies) {
+/*
+function menuItem(name, image, kcal, ingredients, allergies) {
   this.name = name;
   this.image = image;
   this.kcal = kcal;
@@ -33,14 +33,14 @@ let burger4 = new menuItem("The Beef Haven", "http://www.mikaelasmenu.com/upload
 
 // The Mushroom Diplomacy
 let burger5 = new menuItem("The Mushroom Diplomacy", "https://s23991.pcdn.co/wp-content/uploads/2019/08/spinach-tomato-mushroom-burger.jpg", 700, ["portabello mushroom", "red onion", "vegan majonaise", "pickled cucumber", "cumberland jam"], ["gluten"]);
-
+*/
 const vm = new Vue({
-  el: '#myID',
+  el: '#burgersWrapper',
   data: {
   	menu: [burger1, burger2, burger3, burger4, burger5]   
   }
 })
-*/
+
 
 
 
