@@ -26,14 +26,14 @@
         <div id="burgersWrapper">
           <div class="box" v-for="(item, index) in menu" :style="{gridColumn: index+1}">
             <h4>{{item.name}}</h4>
-            <img :src="item.img" :alt="item.name" height="150">
+            <img :src="item.img" :alt="item.name" height="150"><br>
+            <input type="checkbox" v-model="selectedBurgers" name="selectedBurgers" :value="item.name" />
             <ul>
               <li><span v-for="(ing, index) in item.ingredients">{{ing}}<span v-if="index < item.ingredients.length-1">, </span></span></li>
               <li>{{item.kcal}} kCal</li>
               <li><span v-for="(allergy, index) in item.allergies">{{allergy}}<span v-if="index < item.allergies.length-1">, </span></span></li>
             </ul>
           </div>
-
         </div>
 
 
@@ -48,23 +48,23 @@
         <form>
           <p>
             <label for="fnln">First- and Last Name</label><br>
-            <input type="text" name="name" id="fnln" placeholder="First- and Last Name" required />
+            <input type="text" v-model="name" name="name" id="fnln" placeholder="First- and Last Name" required />
           </p>
           <p>
             <label for="em">E-Mail Address</label><br>
-            <input type="email" name="email" id="em" placeholder="E-Mail Address" required />
+            <input type="email" v-model="email" name="email" id="em" placeholder="E-Mail Address" required />
           </p>
           <p>
             <label for="st">Street</label><br>
-            <input type="text" name="street" id="st" placeholder="Stree" required />
+            <input type="text" v-model="street" name="street" id="st" placeholder="Street" required />
           </p>
           <p>
             <label for="hn">House Number</label><br>
-            <input type="number" name="houseNumber" id="hn" placeholder="House Number" required />
+            <input type="number" v-model="houseNumber" name="houseNumber" id="hn" placeholder="House Number" required />
           </p>
           <p>
             <label for="paymentOption"></label>
-            <select id="paymentOption" name="payment">
+            <select v-model="paymentOption" id="paymentOption" name="payment">
               <option>PayPal</option>
               <option selected>Credit Card</option>
               <option>Trustly</option>
@@ -73,18 +73,22 @@
           </p>
           <p>
             Gender<br>
-            <input type="radio" name="gender" id="ma" value="male" checked/>
+            <input type="radio" v-model="gender" name="gender" id="ma" value="male" checked/>
             <label for="ma">Male</label><br>
-            <input type="radio" name="gender" id="wo" value="woman" />
+            <input type="radio" v-model="gender" name="gender" id="wo" value="woman" />
             <label for="wo">Woman</label><br>
-            <input type="radio" name="gender" id="nb" value="non-binary" />
+            <input type="radio" v-model="gender" name="gender" id="nb" value="non-binary" />
             <label for="nb">Non-binary</label><br>
-            <input type="radio" name="gender" id="ud" value="undisclosed" />
+            <input type="radio" v-model="gender" name="gender" id="ud" value="undisclosed" />
             <label for="ud">Undisclosed</label><br>
           </p>
         </form>
       </section>
-      <button id="sendDeliveryBtn"><img src="http://cdn.onlinewebfonts.com/svg/img_561095.png" width="20"> Place my order!</button>
+      <button id="sendDeliveryBtn" v-on:click="getOrder()"><img src="http://cdn.onlinewebfonts.com/svg/img_561095.png" width="20"> Place my order!</button>
+      <h2 v-if="finalOrder.length > 0">Your order</h2>
+      <ul>
+        <li v-for="detail in finalOrder" v-if="detail != ''">{{ detail }}</li>
+      </ul>
     </main>
     <footer>
       <hr>
