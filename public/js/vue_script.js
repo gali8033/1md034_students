@@ -5,15 +5,13 @@ const vm = new Vue({
     selectedBurgers: [],
     name: '',
     email: '',
-    street: '',
-    houseNumber: '',
     paymentOption: '',
     gender: '',
     finalOrder: ''
   },
   methods: {
     getOrder: function() {
-      this.finalOrder = [this.selectedBurgers.join(", "), this.name, this.email, this.street, this.houseNumber, this.paymentOption, this.gender];
+      this.finalOrder = [this.selectedBurgers.join(", "), this.name, this.email, this.paymentOption, this.gender];
     }
   }
 })

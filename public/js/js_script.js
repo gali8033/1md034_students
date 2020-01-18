@@ -88,8 +88,6 @@ button.addEventListener("click", function() {
 function getOrder() {
   let name = document.getElementById("fnln").value;
   let email = document.getElementById("em").value;
-  let street = document.getElementById("st").value;
-  let houseNumber = document.getElementById("hn").value;
   let paymentOption = document.getElementById("paymentOption").value;
   let genders = document.getElementsByName("gender");
 
@@ -100,7 +98,7 @@ function getOrder() {
     }
   }
 
-  let returnArray = [name, email, street, houseNumber, paymentOption, checked];
+  let returnArray = [name, email, paymentOption, checked];
   return returnArray;
 }
 
