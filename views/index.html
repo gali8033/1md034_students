@@ -78,16 +78,15 @@
           </p>
         </form>
         <h1> Choose location for delivery</h1>
-        <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
         <div class="view-box">
-          <div id="dots" v-on:click="addOrder">
-            <div v-for="(order, key) in orders" v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
-            {{key}}
-            </div>
+          <div id="dots" v-on:click="displayOrder">
+              <div v-bind:style="{ left: localOrder.details.x + 'px', top: localOrder.details.y + 'px'}">
+                T
+              </div>
           </div>
-        </div>
+        </div> 
       </section>
-      <button id="sendDeliveryBtn" v-on:click="getOrder()"><img src="http://cdn.onlinewebfonts.com/svg/img_561095.png" width="20"> Place my order!</button>
+      <button id="sendDeliveryBtn" v-on:click="addOrder()"><img src="http://cdn.onlinewebfonts.com/svg/img_561095.png" width="20"> Place my order!</button>
       <h2 v-if="finalOrder.length > 0">Your order</h2>
       <ul>
         <li v-for="detail in finalOrder" v-if="detail != ''">{{ detail }}</li>

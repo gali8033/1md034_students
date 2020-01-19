@@ -16,13 +16,15 @@ app.set('port', (process.env.PORT || port));
 // Serve static assets from public/
 app.use(express.static(path.join(__dirname, 'public/')));
 // Serve vue from node_modules as vue/
+
 app.use('/vue', express.static(path.join(__dirname, '/node_modules/vue/dist/')));
+
 // Serve index.html directly as root page
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'views/index.html'));
 });
 // Serve map.html as /map
-app.get('/map', function (req, res) {
+app.get('/map', function(req, res) {
   res.sendFile(path.join(__dirname, 'views/map.html'));
 });
 // Serve dispatcher.html as /dispatcher
@@ -66,3 +68,6 @@ io.on('connection', function (socket) {
 const server = http.listen(app.get('port'), function () {
   console.log('Server listening on port ' + app.get('port'));
 });
+
+
+
