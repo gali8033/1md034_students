@@ -10,7 +10,7 @@ const vm = new Vue({
     email: '',
     paymentOption: '',
     gender: '',
-    finalOrder: '',
+    customerCredentials: '',
     orders: {},
     localOrder: {
       orderID: '',
@@ -21,20 +21,22 @@ const vm = new Vue({
   },
   methods: {
     getOrder: function() {
-      this.finalOrder = [this.selectedBurgers.join(", "), this.name, this.email, this.paymentOption, this.gender];
+      this.customerCredentials = [this.name, this.email, this.paymentOption, this.gender];
     },
     getNext: function() {
       return ++this.noOrders;
     },
     addOrder: function() {
-      // Candidate for removal
       this.getOrder();
       
-      socket.emit("addOrder", { 
-        orderId: this.getNext(),
-        details: this.localOrder.details,
-        orderItems: this.selectedBurgers
-      });
+      if (this.selectedBurgers.length > 0 && this.customerCredentials.length > 3) {
+        socket.emit("addOrder", { 
+          orderId: this.getNext(),
+          details: this.localOrder.details,
+          orderItems: this.selectedBurgers,
+          credentials: this.customerCredentials
+        });
+      }
     },
     displayOrder: function (event) {
       let offset = {

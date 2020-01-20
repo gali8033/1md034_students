@@ -67,13 +67,13 @@
           </p>
           <p>
             Gender<br>
-            <input type="radio" v-model="gender" name="gender" id="ma" value="male" checked/>
+            <input type="radio" v-model="gender" name="gender" id="ma" value="Male" checked/>
             <label for="ma">Male</label><br>
-            <input type="radio" v-model="gender" name="gender" id="wo" value="woman" />
+            <input type="radio" v-model="gender" name="gender" id="wo" value="Woman" />
             <label for="wo">Woman</label><br>
-            <input type="radio" v-model="gender" name="gender" id="nb" value="non-binary" />
+            <input type="radio" v-model="gender" name="gender" id="nb" value="Non-binary" />
             <label for="nb">Non-binary</label><br>
-            <input type="radio" v-model="gender" name="gender" id="ud" value="undisclosed" />
+            <input type="radio" v-model="gender" name="gender" id="ud" value="Undisclosed" />
             <label for="ud">Undisclosed</label><br>
           </p>
         </form>
@@ -87,10 +87,20 @@
         </div> 
       </section>
       <button id="sendDeliveryBtn" v-on:click="addOrder()"><img src="http://cdn.onlinewebfonts.com/svg/img_561095.png" width="20"> Place my order!</button>
-      <h2 v-if="finalOrder.length > 0">Your order</h2>
-      <ul>
-        <li v-for="detail in finalOrder" v-if="detail != ''">{{ detail }}</li>
-      </ul>
+      <section id="orderConfirmation">
+        <div v-if="selectedBurgers.length > 0 && customerCredentials.length > 3">
+          <h2>Order Confirmation</h2>
+          <h3>Customer Details</h3>
+          <ul>
+            <li v-for="detail in customerCredentials" v-if="detail != ''">{{ detail }}</li>
+          </ul>
+          <h3>Order Summary</h3>
+          <ul>
+            <li v-for="burger in selectedBurgers">{{ burger }}</li>
+          </ul>
+        </div>
+      </section>
+      
     </main>
     <footer>
       <hr>
