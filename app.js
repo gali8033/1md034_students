@@ -36,14 +36,19 @@ app.get('/dispatcher', function (req, res) {
 // prepare for multiple instances of data if necessary
 function Data() {
   this.orders = {};
+  this.orderID = 0;
 }
+
+Data.prototype.getNext = function() {
+  return ++this.orderID;
+};
 
 /*
   Adds an order to to the queue
 */
 Data.prototype.addOrder = function (order) {
   //Store the order in an "associative array" with orderId as key
-  this.orders[order.orderId] = order;
+  this.orders[data.getNext()] = order;
 };
 
 Data.prototype.getAllOrders = function () {

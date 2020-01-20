@@ -16,22 +16,17 @@ const vm = new Vue({
       orderID: '',
       details: {x: '', y: ''},
       orderItems: []
-    },
-    noOrders: 0
+    }
   },
   methods: {
     getOrder: function() {
       this.customerCredentials = [this.name, this.email, this.paymentOption, this.gender];
-    },
-    getNext: function() {
-      return ++this.noOrders;
     },
     addOrder: function() {
       this.getOrder();
       
       if (this.selectedBurgers.length > 0 && this.customerCredentials.length > 3) {
         socket.emit("addOrder", { 
-          orderId: this.getNext(),
           details: this.localOrder.details,
           orderItems: this.selectedBurgers,
           credentials: this.customerCredentials
