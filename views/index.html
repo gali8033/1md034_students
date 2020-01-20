@@ -80,7 +80,7 @@
         <h1> Choose location for delivery</h1>
         <div class="view-box">
           <div id="dots" v-on:click="displayOrder">
-              <div v-bind:style="{ left: localOrder.details.x + 'px', top: localOrder.details.y + 'px'}">
+              <div v-bind:style="{ left: localOrder.details.x + 'px', top: localOrder.details.y + 'px'}" v-if="locationSelected">
                 T
               </div>
           </div>
@@ -88,7 +88,7 @@
       </section>
       <button id="sendDeliveryBtn" v-on:click="addOrder()"><img src="http://cdn.onlinewebfonts.com/svg/img_561095.png" width="20"> Place my order!</button>
       <section id="orderConfirmation">
-        <div v-if="selectedBurgers.length > 0 && customerCredentials.length > 3">
+        <div v-if="selectedBurgers.length > 0 && credentialsFilled() && locationSelected">
           <h2>Order Confirmation</h2>
           <h3>Customer Details</h3>
           <ul>
@@ -99,6 +99,7 @@
             <li v-for="burger in selectedBurgers">{{ burger }}</li>
           </ul>
         </div>
+        <h2 v-else>{{ errorMessage }}</h2>
       </section>
       
     </main>
