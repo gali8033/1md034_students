@@ -1,0 +1,74 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway';
+/*@import 'https://meyerweb.com/eric/tools/css/reset/reset.css';*/
+
+body {
+  font-family: "Helvetica Neue", Raleway, sans-serif;
+  font-size: 1.2em;
+}
+
+header {
+  height: 40%;
+  margin: 0 2%;
+  overflow: hidden;
+}
+
+header h1 {
+  position: absolute;
+  padding: 2%;
+  /*margin-top: -32%;*/
+  z-index: 1;
+}
+
+header img {
+  width: 100%;
+  height: auto;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+section {
+  margin: 0 2%;
+}
+
+button {
+  margin: 2%;
+}
+
+button:hover {
+  background: #555555;
+  cursor: pointer;
+}
+
+#burgersWrapper {
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 2%;
+}
+
+.box {
+  text-align: center;
+}
+
+.box h4 {
+  white-space: nowrap;
+}
+
+.box ul {
+  text-align: left;
+  font-size: 0.8em;
+  width: 100%;
+  padding-left: 0;
+}
+
+#burgers {
+  background: #000000;
+  color: #ffffff;
+  border: 2px dashed #ffffff;
+  padding: 2%;
+}
+
+#orderInformation {
+  border: 2px dashed #000000;
+  padding: 2%;
+}
+

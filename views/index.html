@@ -1,14 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Order your tasty burger now!</title>
-        <meta charset="utf-8"/>
-        <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-        <script src="https://vuejs.org/js/vue.js"></script>
-        <script src="/socket.io/socket.io.js" defer></script>
-        <script type="text/javascript" src="js/vue_script.js" defer></script>
-    </head>
-    <body>
+  <head>
+    <title>Order your tasty burger now!</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/deli-very.css">
+    <script src="https://vuejs.org/js/vue.js"></script>
+    <script src="/socket.io/socket.io.js" defer></script>
+    <script type="text/javascript" src="js/menu.js" defer></script>
+    <script type="text/javascript" src="js/js_script.js" defer></script>
+    <script type="text/javascript" src="js/vue_script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Välkommen till BurgerOnline</h1>
+      <img src="https://i.pinimg.com/originals/0b/38/9b/0b389b8489b21a60cb5925903aff76ca.jpg" alt="BurgerOnline header image">
+    </header>
+    
+    <main>
 
-    </body>
+      <section id="burgers">
+        <h3>Select burger</h3>
+        <p>
+        This is where you execute burger selection
+        </p>
+
+        <div id="burgersWrapper">
+          <div class="box" v-for="(item, index) in menu" :style="{gridColumn: index+1}">
+            <h4>{{item.name}}</h4>
+            <img :src="item.img" :alt="item.name" height="150"><br>
+            <input type="checkbox" v-model="selectedBurgers" name="selectedBurgers" :value="item.name" />
+            <ul>
+              <li><span v-for="(ing, index) in item.ingredients">{{ing}}<span v-if="index < item.ingredients.length-1">, </span></span></li>
+              <li>{{item.kcal}} kCal</li>
+              <li><span v-for="(allergy, index) in item.allergies">{{allergy}}<span v-if="index < item.allergies.length-1">, </span></span></li>
+            </ul>
+          </div>
+        </div>
+
+
+      </section>
+
+      <section id="orderInformation">
+        <h3>Customer information</h3>
+        <p>
+        This is where you provide necessary information
+        </p>
+        <h4>Delivery information</h4>
+        <form>
+          <p>
+            <label for="fnln">First- and Last Name</label><br>
+            <input type="text" v-model="name" name="name" id="fnln" placeholder="First- and Last Name" required />
+          </p>
+          <p>
+            <label for="em">E-Mail Address</label><br>
+            <input type="email" v-model="email" name="email" id="em" placeholder="E-Mail Address" required />
+          </p>
+          <p>
+            <label for="paymentOption"></label>
+            <select v-model="paymentOption" id="paymentOption" name="payment">
+              <option>PayPal</option>
+              <option selected>Credit Card</option>
+              <option>Trustly</option>
+              <option>Swish (Sweden only)</option>
+            </select>
+          </p>
+          <p>
+            Gender<br>
+            <input type="radio" v-model="gender" name="gender" id="ma" value="Male" checked/>
+            <label for="ma">Male</label><br>
+            <input type="radio" v-model="gender" name="gender" id="wo" value="Woman" />
+            <label for="wo">Woman</label><br>
+            <input type="radio" v-model="gender" name="gender" id="nb" value="Non-binary" />
+            <label for="nb">Non-binary</label><br>
+            <input type="radio" v-model="gender" name="gender" id="ud" value="Undisclosed" />
+            <label for="ud">Undisclosed</label><br>
+          </p>
+        </form>
+        <h1> Choose location for delivery</h1>
+        <div class="view-box">
+          <div id="dots" v-on:click="displayOrder">
+              <div v-bind:style="{ left: localOrder.details.x + 'px', top: localOrder.details.y + 'px'}" v-if="locationSelected">
+                T
+              </div>
+          </div>
+        </div> 
+      </section>
+      <button id="sendDeliveryBtn" v-on:click="addOrder()"><img src="http://cdn.onlinewebfonts.com/svg/img_561095.png" width="20"> Place my order!</button>
+      <section id="orderConfirmation">
+        <div v-if="selectedBurgers.length > 0 && credentialsFilled() && locationSelected">
+          <h2>Order Confirmation</h2>
+          <h3>Customer Details</h3>
+          <ul>
+            <li v-for="detail in customerCredentials" v-if="detail != ''">{{ detail }}</li>
+          </ul>
+          <h3>Order Summary</h3>
+          <ul>
+            <li v-for="burger in selectedBurgers">{{ burger }}</li>
+          </ul>
+        </div>
+        <h2 v-else>{{ errorMessage }}</h2>
+      </section>
+      
+    </main>
+    <footer>
+      <hr>
+      &copy; 2020 Hypothetical Burgers Inc. 
+    </footer>
+  </body>
 </html>
